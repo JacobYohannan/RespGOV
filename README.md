@@ -4,7 +4,6 @@ Responsive Governance is a web-based application to improve the Functionalities 
 It consists of users such as consumers, department heads and employees. When we send a complaint to a particular department, the same can viewed by that particular department head. He can view the complaint and allot a worker to maintain the complaint. Worker can view the complaints and update his status like time, date of maintaining etc. When he updates the status, the user can view the. And user can also get a confirmation mail during the time of complaint booking.
 Workers can also update the working details like is the work completed or pending or work in progress like that user can also view the updated details through the site.
 
-SYSTEM STUDY
 Existing System
 Departments deal with different day-to-day activities that take place generally in any system. In the existing manual system huge expenditure and a lot of time is spent in communicating the information across different branches.  So, there is a need for an integrated automated system, which has some centralized control over the entire process.
 The following drawbacks of the existing system emphasize the need for computerization of the Grievance Handling System: 
