@@ -1,0 +1,45 @@
+{% extends 'CustomerPage.html' %}
+{% block body %}
+<div class="about">
+    <div class="container"> 
+        <div class="login-form signup-form">
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <br/>
+                <br/>
+                <div class="styled-input">
+                    <input type="text" name="comp" required=""/>
+                    <label>Enter Your Complaint ID</label>
+                    <span></span>
+                </div>
+                
+                <input type="submit" value="View Status">		
+            </form> 
+        </div>  
+    </div>
+</div>
+<table class="customers">
+    <tr>
+            <th>Complaint</th>
+            <th>Status</th>
+            <th>Staff</th>
+            <th>Mobile</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.4}}</td>
+        <td>{{d.6}}</td>
+        <td>{{d.12}}</td>
+        <td>{{d.14}}</td>
+    </tr>
+
+    {% endfor %}
+    </table>  
+{% if msg %}
+<script>
+alert("{{msg}}")
+</script>
+{% endif %}
+{% endblock %}

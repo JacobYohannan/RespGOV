@@ -1,0 +1,33 @@
+{% extends 'AdminPage.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+<table class="customers">
+    <tr>
+            <th>Consumer ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            
+            <th>Location</th>
+            <th>District</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Aadhar</th>
+            
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.0}}</td>
+        <td>{{d.1}}</td>
+        <td>{{d.2}}</td>
+        <td>{{d.4}}</td>
+        <td>{{d.3}}</td>
+        <td>{{d.5}}</td>
+        <td>{{d.6}}</td>
+        <td>{{d.7}}</td>
+        <td><a href="/AdminViewConsumers/?id={{d.0}}">Remove</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>  
+{% endblock %}

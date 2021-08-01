@@ -1,0 +1,31 @@
+{% extends 'DeptHeadPage.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+<table class="customers">
+    <tr>
+            <th>Complaint ID</th>
+            <th>Consumer No</th>
+            <th>District</th>
+            <th>Complaint</th>
+            <th>Complaint Date</th>
+            <th>Customer</th>
+            <th>Mobile</th>
+            
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.0}}</td>
+        <td>{{d.7}}</td>
+        <td>{{d.3}}</td>
+        <td>{{d.4}}</td>
+        <td>{{d.5}}</td>
+        <td>{{d.8}}</td>
+        <td>{{d.12}}</td>
+        <td><a href="/DeptHeadViewDetailComplaint/?id={{d.0}}&st=Forward&fo={{d.12}}&di={{d.3}}">Forward</a></td>
+        <td><a href="/DeptHeadViewDetailComplaint/?id={{d.0}}&st=Reject&fo={{d.12}}">Reject</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>  
+{% endblock %}

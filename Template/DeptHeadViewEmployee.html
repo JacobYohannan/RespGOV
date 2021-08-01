@@ -1,0 +1,25 @@
+{% extends 'DeptHeadPage.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+<table class="customers">
+    <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>District</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.0}}</td>
+        <td>{{d.1}}</td>
+        <td>{{d.3}}</td>
+        <td>{{d.4}}</td>
+        <td>{{d.2}}</td>
+        <td><a href="/DeptHeadViewEmployee/?id={{d.0}}">Remove</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>  
+{% endblock %}

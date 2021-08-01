@@ -1,0 +1,46 @@
+{% extends 'AdminPage.html' %}
+{% block body %}
+
+			
+<div class="about">
+    <div class="container"> 
+        <div class="login-form">
+            <form action="#" method="post">
+                {% csrf_token %}	
+                <div class="styled-input">
+                    <input type="text" name="cat" required=""> 
+                    <label>Department</label>
+                    <span></span>
+                </div> 
+                
+                <input type="submit" value="Add Now">		
+            </form>
+        </div>  
+    </div>
+</div>
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+<br/>
+<br/>
+<table class="customers">
+    <tr>
+            <th>ID</th>
+            <th>Department</th>
+            
+            <th></th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.0}}</td>
+        <td>{{d.1}}</td>
+       
+        <td><a href="/AdminAddDepartment/?id={{d.0}}">Remove</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>  	
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'CustomerPage.html' %}
+{% block body %}
+<div class="about">
+    <div class="container"> 
+        <div class="login-form signup-form">
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <br/>
+                <br/>
+                
+                <div class="styled-input">
+                    <select name="district">
+                        <option name="">Select Your District</option>
+                        <option name="Malappuram">Malappuram</option>
+
+                        <option name="Kasargode">Kasargode</option>
+                        <option name="Kannur">Kannur</option>
+                        <option name="Kozhikkod">Kozhikkod</option>
+                        <option name="Wayanadu">Wayanadu</option>
+                        <option name="Palakkad">Palakkad</option>
+                        <option name="Thrissur">Thrissur</option>
+                        <option name="Ernakulam">Ernakulam</option>
+                        <option name="Alappuzha">Alappuzha</option>
+                        <option name="Kottayam">Kottayam</option>
+                        <option name="Idukki">Idukki</option>
+                        <option name="Kollam">Kollam</option>
+                        <option name="Pathanamthitta">Pathanamthitta</option>
+                        <option name="Trivandram">Trivandram</option>
+
+                        
+                    </select>
+                    <span></span>
+                </div>
+                <div class="styled-input">
+                    <input type="text" name="pname" required=""/>
+                    <label>Complaint</label>
+                    <span></span>
+                </div>
+                <div class="styled-input">
+                    <input type="text" name="consnum" required=""/>
+                    <label>Consumer Number</label>
+                    <span></span>
+                </div>
+               
+                <div class="styled-input">
+                    <select name="cat">
+                        <option>---Select Department---</option>
+                            {%for c in cat %}
+                        <option value="{{c.0}}">{{c.1}}</option>
+                            {% endfor %}
+                    
+                    <span></span>
+                </div>
+
+                
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+                
+               
+                <input type="submit" value="Add Now">	
+               
+            </form> 
+        </div>  
+    </div>
+</div>
+{% if msg %}
+<script>
+alert("{{msg}}")
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'DeptHeadPage.html' %}
+{% block body %}
+
+<div class="about">
+    <div class="container"> 
+        <div class="login-form signup-form">
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+<div class="styled-input">
+    <select name="cat">
+        <option>---Select Department---</option>
+            {%for c in data %}
+        <option value="{{c.0}}">{{c.1}}</option>
+            {% endfor %}
+    
+    <span></span>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<input type="submit" value="View Complaint">	
+</form> 
+</div>  
+</div>
+</div>	
+{% endblock %}

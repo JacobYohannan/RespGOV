@@ -1,0 +1,37 @@
+{% extends 'CustomerPage.html' %}
+{% block body %}
+<div class="about">
+    <div class="container"> 
+        <div class="login-form signup-form">
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <br/>
+                <br/>
+                <div class="styled-input">
+                    <input type="text" name="pname" required=""/>
+                    <label>Your Feedback</label>
+                    <span></span>
+                </div>
+
+                <div class="styled-input">
+                    <select name="cat">
+                        <option>---Select Department---</option>
+                            {%for c in cat %}
+                        <option value="{{c.0}}">{{c.1}}</option>
+                            {% endfor %}
+                            <span></span>
+                </div>
+
+                <input type="submit" value="Post Now">		
+            </form> 
+        </div>  
+    </div>
+</div>
+{% if msg %}
+<script>
+alert("{{msg}}")
+</script>
+{% endif %}
+{% endblock %}

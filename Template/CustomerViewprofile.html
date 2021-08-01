@@ -1,0 +1,79 @@
+{% extends 'CustomerPage.html' %}
+{% block body %}
+ <div class="about">
+    <div class="container"> 
+        <div class="login-form signup-form">
+          <!--  <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <br/>
+                <br/>
+                <div class="styled-input">
+                    <input type="text" name="comp" required=""/>
+                    <label>Enter Your Complaint ID</label>
+                    <span></span>
+                </div>
+                
+                <input type="submit" value="View Status">		
+            </form> 
+        </div>  
+    </div>
+</div> <form action="{% url 'Customerviewprofile' %}" method="POST">-->
+<form  method="POST">
+    {% csrf_token %}
+    <div class="card-body  text-center">
+        <h5 class="card-title pt-3">Edit Your Profile</h5>
+        <br>
+        <table style="position: relative;left: 42%">
+            <br>
+            {% for d in data %}
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" value="{{d.1}}" name="t1" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" value="{{d.2}}" name="t2" required></td>                
+            <tr>
+                <td>Location:</td>
+                <td><input type="text" value="{{d.4}}" name="t3" required></td>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td><input type="text" value="{{d.3}}" name="t4" required></td>
+            </tr>
+           
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" value="{{d.5}}" name="t5" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" value="{{d.6}}" name="t6" required></td>
+            </tr>
+            <tr>
+                <td>Aadhar:</td>
+                <td><input type="text" value="{{d.7}}" name="t7" required></td>
+            </tr>
+            
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" value="{{d.8}}" name="t8" required></td>
+            </tr>
+        </table>
+        {% endfor %}
+        <br><br>
+        <input class="btn" type="submit" value=UPDATE>
+
+    </div>
+</form>
+</div>
+</div>  
+</div>
+{% if msg %}
+<script>
+alert("{{msg}}")
+</script>
+{% endif %}
+{% endblock %}
